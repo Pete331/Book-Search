@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchForm from "../../components/SearchForm";
 import BookResults from "../../components/BookResults";
 import API from "../../utils/API";
@@ -7,11 +7,6 @@ function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([]);
   const [bookSearch, setBookSearch] = useState("");
-  const [formObject, setFormObject] = useState({
-    title: "",
-    author: "",
-    synopsis: "",
-  });
 
   const handleInputChange = (event) => {
     // Destructure the name and value properties off of event.target
@@ -32,28 +27,15 @@ function Books() {
       .catch((err) => console.log(err));
   };
 
-  const handleSaveClick = (event)=>{
-    console.log(event.target.id);
-  }
-
-  // Load all books and store them with setBooks
-  // useEffect(() => {
-  //   loadBooks();
-  // }, []);
-
-  // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
-      .then((res) => setBooks(res.data))
+  const handleSaveClick = (props) => {
+    const selectedBook = props.props
+    console.log(selectedBook);
+    API.saveBook(selectedBook)
+      .then((res) => {
+        console.log(res);
+      })
       .catch((err) => console.log(err));
-  }
-
-  // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
-      .then((res) => loadBooks())
-      .catch((err) => console.log(err));
-  }
+  };
 
   return (
     <div>
@@ -64,7 +46,14 @@ function Books() {
         placeholder="Search For a Book"
         handleFormSubmit={handleFormSubmit}
       />
-      {books.length ? <BookResults books={books} handleSaveClick={handleSaveClick} /> : ""}
+      {books.length ? (
+        <BookResults
+          books={books}
+          handleSaveClick={handleSaveClick}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -1,7 +1,12 @@
 import React from "react";
 import BookListItem from "./BookListItem";
 
-function BookResults({ books, handleSaveClick }) {
+function BookResults({
+  books,
+  saved,
+  handleSaveClick,
+  handleDeleteClick,
+}) {
   return (
     <div className="card-panel">
       <p>Results</p>
@@ -12,17 +17,18 @@ function BookResults({ books, handleSaveClick }) {
             <BookListItem
               title={book.volumeInfo.title}
               authors={book.volumeInfo.authors}
-              href={book.volumeInfo.infoLink}
+              link={book.volumeInfo.infoLink}
               description={book.volumeInfo.description}
               image={book.volumeInfo.imageLinks.thumbnail}
               key={book.id}
               id={book.id}
               handleSaveClick={handleSaveClick}
+              saved={saved}
             />
           );
         })
       ) : (
-        <BookListItem ingredients="Nothing Here" />
+        <BookListItem books="Nothing Here" />
       )}
     </div>
   );

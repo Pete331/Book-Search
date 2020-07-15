@@ -19,6 +19,14 @@ app.use(routes);
 // Define any API routes before this runs
 
 // Connect to the Mongo DB
+// This uses mongodb atlas (https://www.mongodb.com/cloud/atlas)
+// Follow the steps to create a free mongo db cluster.
+// Click CONNECT on your cluster to get your connection uri.
+// Use 0.0.0.0/0 for your ip whitelist (allow everything).
+// Your connection uri should look something like this:
+// mongodb+srv://<username>:<password>@reactapp.t7dug.mongodb.net/<dbname>?retryWrites=true&w=majority
+// Set the MONGO_URI environment variable in your heroku deploy:
+// https://devcenter.heroku.com/articles/config-vars#using-the-heroku-cli
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
 );
