@@ -8,7 +8,7 @@ function BookResults({
   handleDeleteClick,
 }) {
   return (
-    <div className="card-panel">
+    <div className="card-panel" style={{backgroundColor: "blanchedalmond"}}>
       <p>Results</p>
 
       {books.length ? (

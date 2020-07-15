@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <nav>
-      <div className="nav-wrapper blue">
+      <div className="nav-wrapper"style={{backgroundColor: "deepskyblue"}}>
         <a href="/" className="brand-logo">
           Google Books
         </a>

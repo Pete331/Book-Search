@@ -3,7 +3,7 @@ import BookListItem from "./BookListItem";
 
 function FavoriteBooks({ savedBooks, handleDeleteClick }) {
   return (
-    <div className="card-panel">
+    <div className="card-panel" style={{backgroundColor: "blanchedalmond"}}>
       <p>Results</p>
 
       {savedBooks.length ? (
