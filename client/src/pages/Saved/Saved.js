@@ -18,7 +18,7 @@ function Saved() {
       .catch((err) => console.log(err));
   }
 
-  // Deletes a book from the database with a given id, then reloads books from the db
+  // Deletes a book from the database with a given id, then reloads books from the dbs
   const handleDeleteClick = (props) => {
     console.log(props.props.id);
     API.deleteBook(props.props.id)
