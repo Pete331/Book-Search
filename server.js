@@ -28,7 +28,7 @@ app.use(routes);
 // Set the MONGO_URI environment variable in your heroku deploy:
 // https://devcenter.heroku.com/articles/config-vars#using-the-heroku-cli
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
+  process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 app.listen(PORT, () => {

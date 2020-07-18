@@ -15,7 +15,7 @@ function BookResults({ books, saved, handleSaveClick, handleDeleteClick }) {
               link={book.volumeInfo.infoLink}
               description={book.volumeInfo.description}
               image={
-                book.volumeInfo.imageLinks == undefined
+                book.volumeInfo.imageLinks === undefined
                   ? "https://via.placeholder.com/150"
                   : book.volumeInfo.imageLinks.thumbnail
               }
