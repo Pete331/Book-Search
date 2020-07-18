@@ -19,7 +19,7 @@ function BookResults({ books, saved, handleSaveClick, handleDeleteClick }) {
                   ? "https://via.placeholder.com/150"
                   : book.volumeInfo.imageLinks.thumbnail
               }
-              key={book.id}
+              key={book.etag}
               id={book.id}
               handleSaveClick={handleSaveClick}
               saved={saved}
