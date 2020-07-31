@@ -1,4 +1,5 @@
 # Google Books Search
+**Deployed Application can be viewed [here](https://book-search331.herokuapp.com/)**  
 This application allows the user to search for a book, which it then displays on the UI. The books are sourced from the Google Books API. The user can then save book information to a database as a 'favorites' type list. The user can view their saved books on a seperate page and delete from their saved list as required.  
 This application utilizes the MERN stack (Mongo, Express, React and Node).  
 
