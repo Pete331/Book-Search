@@ -35,8 +35,3 @@ There are currently no tests supplied with this repo
 ### Click on profile picture below to see Pete331's Github profile
 [![Pete331's Profile Picture](https://avatars2.githubusercontent.com/u/53825841?v=4&s=200 "Created by Pete331")](https://github.com/Pete331)  
 ![GitHub followers](https://img.shields.io/github/followers/Pete331?style=social)  
-
-
-
-In this activity, you'll create a new React-based Google Books Search app. This assignment requires you to create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. You'll also use Node, Express and MongoDB so that users can save books to review or purchase later.
-
